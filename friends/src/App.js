@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,6 +11,9 @@ import { Login } from './components/Login';
 //importing Friends component
 import { Friends } from './components/Friends';
 
+//importing PrivateRoute component
+import PrivateRoute from './components/PrivateRoute'
+
 function App() {
 
   return (
@@ -18,8 +21,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <Route exact path='/' component={Login} />
-      <Route exact path ='/friends' component={Friends} />
+      <Route path='/login' component={Login} />
+      <PrivateRoute exact path='/friends' component={Friends} />
     </div>
   );
 }
