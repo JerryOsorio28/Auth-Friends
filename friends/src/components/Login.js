@@ -28,7 +28,7 @@ export const Login = (props) => {
             <form onSubmit={submitHandler}>
                 <h3>Username</h3>
                 <input 
-                id='usernameButton'
+                id='username'
                 type='text' 
                 placeholder='Username'
                 name='username' 
