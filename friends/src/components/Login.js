@@ -28,6 +28,7 @@ export const Login = (props) => {
             <form onSubmit={submitHandler}>
                 <h3>Username</h3>
                 <input 
+                id='usernameButton'
                 type='text' 
                 placeholder='Username'
                 name='username' 
@@ -36,6 +37,7 @@ export const Login = (props) => {
                 />
                 <h3>Password</h3>
                 <input 
+                id='password'
                 type='text' 
                 placeholder='Password'
                 name='password' 
@@ -43,8 +45,9 @@ export const Login = (props) => {
                 onChange={changeHandler}
                 />
                 <button 
+                className='loginButton'
                 type='submit'
-                >Add friend</button>
+                >Login</button>
             </form>
         </>
     );

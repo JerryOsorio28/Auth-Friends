@@ -2,17 +2,17 @@ import React from 'react';
 
 const Friend = (props) => {
     return (
-        <>
-            <div>
-                {props.friend.name}
+        <div className='friendCard'>
+            <div className='cardName'>
+                Name: {props.friend.name}
             </div>
-            <div>
-                {props.friend.email}
+            <div className='email'>
+                E-mail: {props.friend.email}
             </div>
-            <div>
-                {props.friend.age}
+            <div className='age'>
+                Age: {props.friend.age}
             </div>
-        </>
+        </div>
     )
 };
 
