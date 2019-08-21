@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; 
 import axios from 'axios';
 
-export const Login = () => {
+export const Login = (props) => {
     //setting state for login credentials
     const [ credentials, setCredentials] = useState({username: 'Lambda School', password: 'i<3Lambd4'})
 
@@ -17,7 +17,8 @@ export const Login = () => {
         axios.post('http://localhost:5000/api/login', credentials)
         .then(res => {
             console.log(res)
-            localStorage.setItem(res.data.payload)
+            localStorage.setItem('token', res.data.payload)
+            props.history.push('/friends')
         })
         .catch(err => console.log(err.response));
     }
@@ -41,7 +42,9 @@ export const Login = () => {
                 value={credentials.password}
                 onChange={changeHandler}
                 />
-                <button type='submit'>Add friend</button>
+                <button 
+                type='submit'
+                >Add friend</button>
             </form>
         </>
     );
